@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "fc461524-fe2e-40a1-a057-1e1659d36dc7",
+		"name": "boo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "470406"
+	},
+	"item": [
+		{
+			"name": "get profiles",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"title\": \"FEf\",\n    \"description\": \"Er\"\n }    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/profiles",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get profile by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"title\": \"FEf\",\n    \"description\": \"Er\"\n }    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/profiles/65cd09bd015029080c1a7c4d",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profiles",
+						"65cd09bd015029080c1a7c4d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": \"65cd09cd015029080c1a7c50\",\n    \"commentData\": {\n        \"title\": \"Your comment title\",\n        \"description\": \"Your comment description\"\n    },\n    \"voteData\": {\n        \"mbti\": \"INTJ\",\n        \"enneagram\": \"7w6\",\n        \"zodiac\": \"Gemini\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/profiles/65cd09bd015029080c1a7c4d/comments/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profiles",
+						"65cd09bd015029080c1a7c4d",
+						"comments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add like",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/profiles/65cca142c0be40f6a3a9a1ab/comments/65cca152c0be40f6a3a9a1ae/like",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profiles",
+						"65cca142c0be40f6a3a9a1ab",
+						"comments",
+						"65cca152c0be40f6a3a9a1ae",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "unlike",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/profiles/65cca142c0be40f6a3a9a1ab/comments/65cca152c0be40f6a3a9a1ae/unlike",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profiles",
+						"65cca142c0be40f6a3a9a1ab",
+						"comments",
+						"65cca152c0be40f6a3a9a1ae",
+						"unlike"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get comments with filters",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/profiles/65cd09bd015029080c1a7c4d/comments?mbti=INTJ&enneagram=7w6&zodiac=Gemini&sort=best",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profiles",
+						"65cd09bd015029080c1a7c4d",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "mbti",
+							"value": "INTJ"
+						},
+						{
+							"key": "enneagram",
+							"value": "7w6"
+						},
+						{
+							"key": "zodiac",
+							"value": "Gemini"
+						},
+						{
+							"key": "sort",
+							"value": "best"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test name\",\n    \"description\": \"dummy description\",\n    \"mbti\": \"INTJ\",\n    \"enneagram\": \"3w2\",\n    \"variant\": \"test\",\n    \"tritype\": 2,\n    \"socionics\": \"test value\",\n    \"sloan\": \"test sloan\",\n    \"psyche\": \"test psyche\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/profiles",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\n    \"name\": \"user name\"\n   } \n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
