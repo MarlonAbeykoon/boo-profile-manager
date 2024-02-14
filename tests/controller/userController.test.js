@@ -45,7 +45,6 @@ describe('User Operations', () => {
             const res = {};
             const next = jest.fn();
 
-            // Mock the createUser method to throw an error
             const error = new Error('Creation failed');
             userRepository.createUser.mockRejectedValue(error);
 
